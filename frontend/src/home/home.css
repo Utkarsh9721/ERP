@@ -1,0 +1,208 @@
+.home {
+  text-align: center;
+  padding: 2rem;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 1000px; /* Increased from 800px */
+  margin: 3rem auto; /* Increased margin */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-wrapper {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 500px; /* Increased from 400px */
+  border-radius: 15px; /* Slightly larger radius */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* More prominent shadow */
+}
+
+.image-item {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  width: 70px; /* Increased from 60px */
+  height: 70px; /* Increased from 60px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+}
+
+.scroll-btn:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.scroll-btn.left {
+  left: 30px; /* Moved further from edge */
+}
+
+.scroll-btn.right {
+  right: 30px; /* Moved further from edge */
+}
+
+.scroll-btn img {
+  width: 30px; /* Increased from 25px */
+  height: 30px; /* Increased from 25px */
+}
+
+/* Dots Indicator */
+.dots-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px; /* Increased gap */
+  margin-top: 25px;
+  position: absolute;
+  bottom: -45px; /* Adjusted for larger container */
+  left: 0;
+  right: 0;
+}
+
+.dot {
+  width: 15px; /* Increased from 12px */
+  height: 15px; /* Increased from 12px */
+  border-radius: 50%;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot:hover {
+  background: #777;
+  transform: scale(1.3); /* Slightly larger hover effect */
+}
+
+.dot.active {
+  background: #222;
+  transform: scale(1.3); /* Slightly larger active effect */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .carousel-container {
+    max-width: 90%;
+  }
+  
+  .img-wrapper {
+    height: 450px; /* Adjusted for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    max-width: 95%;
+    margin: 2rem auto;
+  }
+  
+  .img-wrapper {
+    height: 400px; /* Still larger than original on mobile */
+    border-radius: 10px;
+  }
+  
+  .scroll-btn {
+    width: 60px; /* Keep decent size on mobile */
+    height: 60px;
+  }
+  
+  .scroll-btn.left {
+    left: 15px;
+  }
+  
+  .scroll-btn.right {
+    right: 15px;
+  }
+  
+  .scroll-btn img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .img-wrapper {
+    height: 350px; /* Still decent size on small mobile */
+  }
+  
+  .scroll-btn {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .scroll-btn img {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .dots-container {
+    gap: 10px;
+    bottom: -40px;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Optional: Add animation for image transitions */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* If you want to add fade effect instead of slide */
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* You can add this class to image-item for fade effect */
+.image-item.fade {
+  animation: fadeIn 0.5s ease;
+}
+ 

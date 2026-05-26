@@ -1,0 +1,36 @@
+/* LoginOptions.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #f0f2f5;
+}
+
+.title {
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #333;
+}
+
+.options {
+  display: flex;
+  gap: 20px;
+}
+
+.option {
+  background-color: #4f46e5;
+  color: white;
+  padding: 30px 50px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  text-align: center;
+}
+
+.option:hover {
+  background-color: #4338ca;
+  transform: scale(1.05);
+}

@@ -1,0 +1,235 @@
+/* FacultyLogin.css */
+
+.faculty-login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+.faculty-login-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 450px;
+  animation: slideUp 0.5s ease;
+}
+
+.faculty-login-card h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.faculty-login-card input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.faculty-login-card input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.faculty-login-card input::placeholder {
+  color: #a0aec0;
+}
+
+.faculty-login-card button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.faculty-login-card button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.faculty-login-card button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.faculty-login-card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hint {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #718096;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faculty-login-container {
+    padding: 15px;
+  }
+
+  .faculty-login-card {
+    padding: 2rem;
+    border-radius: 16px;
+    max-width: 400px;
+  }
+
+  .faculty-login-card h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .faculty-login-card input {
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .faculty-login-card button {
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faculty-login-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .faculty-login-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .faculty-login-card input {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .faculty-login-card button {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .hint {
+    font-size: 0.85rem;
+    margin-top: 1.2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .faculty-login-card {
+    padding: 1.2rem;
+  }
+
+  .faculty-login-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .faculty-login-card input,
+  .faculty-login-card button {
+    padding: 0.7rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .faculty-login-card {
+    background: #1a202c;
+    color: #e2e8f0;
+  }
+
+  .faculty-login-card h2 {
+    color: #e2e8f0;
+  }
+
+  .faculty-login-card input {
+    background: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+  }
+
+  .faculty-login-card input:focus {
+    border-color: #667eea;
+  }
+
+  .hint {
+    color: #a0aec0;
+  }
+}
+
+/* Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.faculty-login-card button:disabled {
+  animation: pulse 1.5s infinite;
+}
+
+/* Accessibility */
+.faculty-login-card input:focus-visible,
+.faculty-login-card button:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .faculty-login-container {
+    background: white !important;
+  }
+  
+  .faculty-login-card {
+    box-shadow: none;
+    border: 2px solid #ddd;
+  }
+  
+  .faculty-login-card button {
+    background: #666 !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
